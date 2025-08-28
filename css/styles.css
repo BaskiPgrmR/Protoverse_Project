@@ -1,0 +1,206 @@
+/* Main Styles for Industrial VR Prototyping Platform */
+
+body {
+  margin: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* UI Overlay */
+.ui-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ui-overlay button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.ui-overlay button:hover {
+  background-color: #45a049;
+}
+
+.ui-overlay select {
+  padding: 4px;
+  border-radius: 4px;
+  border: none;
+  margin: 0 5px;
+}
+
+.model-selector {
+  display: flex;
+  align-items: center;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+}
+
+/* Feedback Panel */
+.feedback-panel {
+  position: fixed;
+  right: 0;
+  top: 50px;
+  width: 250px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  border-radius: 5px 0 0 5px;
+  transform: translateX(250px);
+  transition: transform 0.3s ease;
+  z-index: 998;
+}
+
+.feedback-panel.open {
+  transform: translateX(0);
+}
+
+.feedback-panel textarea {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.feedback-panel h3 {
+  margin-top: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 5px;
+}
+
+/* Measurement Tools */
+.measurement-panel {
+  position: fixed;
+  left: 0;
+  top: 50px;
+  width: 250px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  border-radius: 0 5px 5px 0;
+  transform: translateX(-250px);
+  transition: transform 0.3s ease;
+  z-index: 998;
+}
+
+.measurement-panel.open {
+  transform: translateX(0);
+}
+
+.measurement-panel button {
+  background-color: #2196F3;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  margin: 5px 0;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.measurement-panel button:hover {
+  background-color: #0b7dda;
+}
+
+/* Annotation styles */
+.annotation-marker {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 0, 0, 0.7);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.annotation-content {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  width: 200px;
+  display: none;
+}
+
+.annotation-marker:hover .annotation-content {
+  display: block;
+}
+
+/* Loading indicator */
+.loading-indicator {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1000;
+  display: none;
+}
+
+.loading-indicator.visible {
+  display: block;
+}
+
+/* Multi-selection indicator */
+.multi-select-indicator {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 998;
+  display: none;
+}
+
+.multi-select-indicator.visible {
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ui-overlay {
+    flex-direction: column;
+  }
+  
+  .model-selector, .controls {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
